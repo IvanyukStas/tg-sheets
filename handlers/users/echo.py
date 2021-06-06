@@ -1,3 +1,5 @@
+import logging
+
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 
@@ -10,8 +12,10 @@ from utils.db_api.db_commands import is_client, add_new_client
 
 @dp.message_handler(state=None)
 async def bot_echo(message: types.Message):
-    is_client(message.from_user.id)
-    add_new_client(message.from_user.full_name, message.from_user.id)
+    if not await is_client(message.from_user.id):
+        add_new_client(message.from_user.full_name, message.from_user.id)
+    else:
+        logging.info('Такой юсер уже есть его не создаем!')
     await message.answer(f"Эхо без состояния."
                          f"Сообщение:\n"
                          f"{message.text}")

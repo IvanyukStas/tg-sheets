@@ -11,8 +11,8 @@ environs = "^9.3.2"
 SQLAlchemy = "^1.4.17"
 DateTime = "^4.3"
 alembic = "^1.6.5"
-models = "^0.9.3"
-automium_web = "^0.1.1"
+pygsheets = "^2.0.5"
+
 
 [tool.poetry.dev-dependencies]
 

@@ -5,7 +5,7 @@ from utils.db_api.models import Users
 
 
 
-def is_client(client_tg_id):
+async def is_client(client_tg_id):
     conn = db.connect()
     user = session.query(Users).group_by(Users.tg_id == client_tg_id).one_or_none()
     if not user == None:
