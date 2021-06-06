@@ -5,7 +5,6 @@ description = ""
 authors = ["IvanyukStas <aswd25@yandex.ru>"]
 
 [tool.poetry.dependencies]
-python = "^3.9.1"
 aiogram = "^2.13"
 environs = "^9.3.2"
 
